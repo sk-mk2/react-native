@@ -1,0 +1,22 @@
+{
+  "name": "react-native",
+  "version": "1.0.0",
+  "description": "JavaScriptでモバイルアプリを構築できる",
+  "main": "index.js",
+  "scripts": {
+    "prestart":"node env.js && node express/app.js &",
+    "start":"cd TestProject && npm start",
+    "stop":"killall node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk-mk2/react-native.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sk-mk2/react-native/issues"
+  },
+  "homepage": "https://github.com/sk-mk2/react-native#readme"
+}
