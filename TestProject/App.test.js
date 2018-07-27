@@ -7,3 +7,9 @@ it('renders without crashing', () => {
   const rendered = renderer.create(<App />).toJSON();
   expect(rendered).toBeTruthy();
 });
+
+import LotsOfGreetings from './components/Greeting.js';
+it('Greeting components without crashing', () => {
+  const rendered = renderer.create(<LotsOfGreetings />).toJSON();
+  expect(rendered).toBeTruthy();
+});

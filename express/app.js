@@ -3,7 +3,7 @@ const app = express();
 // log4jsの読み込み
 const log4js  = require('log4js');
 // ログ出力設定
-log4js.configure('./log4js.config.json');  
+log4js.configure(__dirname + '/log4js.config.json');  
 // ロガーの生成
 const logger = log4js.getLogger('system');
 
