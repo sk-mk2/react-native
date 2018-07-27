@@ -2,8 +2,9 @@
 function getIp(){
     const os = require('os');
     const networkInterfaces = os.networkInterfaces();
+    const ipReg = /^wlp\ds0$/;
     for(k in networkInterfaces) {
-        if(k === 'wlp3s0') {
+        if(ipReg.test(k)) {
             return networkInterfaces[k][0].address;
         }
     }
