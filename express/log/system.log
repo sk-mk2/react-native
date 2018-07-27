@@ -1,0 +1,4 @@
+[2018-07-27T22:45:50.552] [INFO] system - IP: 192.168.1.10
+[2018-07-27T22:45:50.554] [INFO] system - App listening on port 8080
+[2018-07-27T22:45:50.554] [INFO] system - Press Ctrl+C to quit
+[2018-07-27T22:46:19.498] [ERROR] system - ::1 - - "GET / HTTP/1.1" 404 139 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
