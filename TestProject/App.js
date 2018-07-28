@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //これらはそれぞれreact-nativeが提供しているコンポーネント
-import { StyleSheet, Text, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, ScrollView, Image, View} from 'react-native';
 import LotsOfGreetings  from './components/Greeting.js';
 import Blink  from './components/Blink.js';
 import Style  from './components/Style.js';
@@ -25,16 +25,18 @@ export default class App extends Component {
             uri: `http:\/\/${ip}:${port}/image/nelu.jpg`
         };
         return (
-            <ScrollView style={styles.container}>
-            <Text>長濱ねる</Text>
-            <Image source={pic} style={{width: 193, height: 110}}/>
-            <LotsOfGreetings />
-            <Blink />
-            <Style />
-            <Dimension />
-            <Rayout />
-            <InputText />
-            </ScrollView>
+            <View>
+                <ScrollView>
+                    <Text>長濱ねる</Text>
+                    <Image source={pic} style={{width: 193, height: 110}}/>
+                    <LotsOfGreetings />
+                    <Style />
+                    <InputText />
+                </ScrollView>
+                <Blink />
+                <Dimension />
+                <Rayout />
+            </View>
         );
     }
 }
