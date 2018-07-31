@@ -20,9 +20,13 @@ const {ip, port} = require('./env.json');
 
 export default class App extends Component {
     render() {
+        //firebaseのアドレス
+        const uri = 'https://react-native-server-6550b.firebaseapp.com/image/nelu.jpg';
+        //ローカルのexpressでのアドレス    
+        //const uri = `http:\/\/${ip}:${port}/image/nelu.jpg`;
         console.log(LotsOfGreetings);
         let pic = {
-            uri: `http:\/\/${ip}:${port}/image/nelu.jpg`
+            uri : uri
         };
         return (
             <View>
@@ -31,6 +35,7 @@ export default class App extends Component {
                     <Image source={pic} style={{width: 193, height: 110}}/>
                     <LotsOfGreetings />
                     <Style />
+                    <Text>好きな名前を入力</Text>
                     <InputText />
                 </ScrollView>
                 <Blink />

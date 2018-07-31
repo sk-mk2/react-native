@@ -38,5 +38,11 @@ BrouserifyやWebpackなどのこと
 UIの状態を管理するためのフレームワーク
 とくにReactとの相性が良い
 
+## firebase
+今回使っている静的コンテンツのホスティング先はfirebase
+
+## expo
+iosアプリなどをxcode無しで実機確認できる
+
 
 
