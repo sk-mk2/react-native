@@ -1,50 +1,54 @@
 import React, { Component } from 'react';
 //これらはそれぞれreact-nativeが提供しているコンポーネント
-import { StyleSheet, Text, ScrollView, Image, View} from 'react-native';
-import LotsOfGreetings  from './components/Greeting.js';
+import { StyleSheet} from 'react-native';
 import Blink  from './components/Blink.js';
-import Style  from './components/Style.js';
 import Dimension  from './components/Dimension.js';
 import Rayout  from './components/Rayout.js';
-import InputText  from './components/InputText.js';
+import Nelu from './components/Nelu.js';
+import List from './components/List.js';
+import { createStackNavigator } from 'react-navigation';
 
 //名前付きexportはimportする際その名前でしかimportできない
 //default export は好きな名前でimportできる
 
 const {ip, port} = require('./env.json');
+const RootStack = createStackNavigator({
+    Nelu: {
+        screen: Nelu 
+    },
+    Blink: {
+        screen: Blink 
+    },
+    Dimension: {
+        screen: Dimension 
+    },
+    Rayout: {
+        screen: Rayout 
+    },
+    List: {
+        screen: List
+    }
+}, {
+    initialRouteName: 'List'
+});
+
+
 
 //他にも各種ボタン、リスト表示とか用のコンポーネントもある
 //httpRequestはfetchAPIを使うのが一般的？axiosとかでも
 //react-native自体にその機能はないっぽい
 //WebSocketも使える,これもwebAPI使ってアクセスするっぽい
+//react-navigatorというので画面遷移は簡単にできる
+
 
 export default class App extends Component {
     render() {
-        //firebaseのアドレス
-        const uri = 'https://react-native-server-6550b.firebaseapp.com/image/nelu.jpg';
-        //ローカルのexpressでのアドレス    
-        //const uri = `http:\/\/${ip}:${port}/image/nelu.jpg`;
-        console.log(LotsOfGreetings);
-        let pic = {
-            uri : uri
-        };
         return (
-            <View>
-                <ScrollView>
-                    <Text>長濱ねる</Text>
-                    <Image source={pic} style={{width: 193, height: 110}}/>
-                    <LotsOfGreetings />
-                    <Style />
-                    <Text>好きな名前を入力</Text>
-                    <InputText />
-                </ScrollView>
-                <Blink />
-                <Dimension />
-                <Rayout />
-            </View>
+            <RootStack />
         );
     }
 }
+
 
 
 const styles = StyleSheet.create({
