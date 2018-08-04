@@ -10,13 +10,6 @@ import { createStackNavigator } from 'react-navigation';
 //名前付きexportはimportする際その名前でしかimportできない
 //default export は好きな名前でimportできる
 
-const {ip, port} = require('.././env.json');
-const RootStack = createStackNavigator({
-    Home: {
-        screen: Dimension,
-    },
-});
-
 //他にも各種ボタン、リスト表示とか用のコンポーネントもある
 //httpRequestはfetchAPIを使うのが一般的？axiosとかでも
 //react-native自体にその機能はないっぽい

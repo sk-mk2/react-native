@@ -11,7 +11,6 @@ import { createStackNavigator } from 'react-navigation';
 //名前付きexportはimportする際その名前でしかimportできない
 //default export は好きな名前でimportできる
 
-const {ip, port} = require('./env.json');
 const RootStack = createStackNavigator({
     Nelu: {
         screen: Nelu 
@@ -48,9 +47,6 @@ export default class App extends Component {
         );
     }
 }
-
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -10,7 +10,7 @@ const logger = log4js.getLogger('system');
 app.use(log4js.connectLogger(logger, {level: 'auto'}));
 app.use(express.static(__dirname + '/public'));
 
-const {ip, port} = require('./env.json');
+const ip = 'xxxxxx';
 const PORT = process.env.port || port;
 app.listen(PORT, () => {
     logger.info(`IP: ${ip}`);

@@ -10,18 +10,23 @@ export default class List extends Component{
             'Rayout'
         ];
         return (
-        <FlatList
-            data={componentsList}
-            renderItem={({ item }) => (
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate(item)}
-                >
-                    <Text>
-                        {item}
-                    </Text>
-                </TouchableOpacity>
-            )}
-        />
+            <View>
+                <Text>
+                    React-Native Tutrial
+                </Text>
+                <FlatList
+                    data={componentsList}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate(item)}
+                        >
+                            <Text>
+                                {item}
+                            </Text>
+                        </TouchableOpacity>
+                    )}
+                />
+            </View>
         );
     }
 }

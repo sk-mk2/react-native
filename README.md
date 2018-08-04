@@ -1,23 +1,17 @@
 # 実行方法
 
+expCLIまたはexpXDEをインストール  
+Expoアカウントでログイン
+
 各種フォルダでnpm install
-```
-npm install -g create-react-native-app
-sudo sysctl -w fs.inotify.max_user_instances=1024
-sudo sysctl -w fs.inotify.max_user_watches=12288
-npm start
 
-```
+## expoCLIよく使うコマンド
+それぞれ対応したネットワークでアプリを動かす
+exp start --tunnel,--lan,--localhost  
+アプリをexpo上に公開
+exp publish
 
-react-nativeがこれだと動かないから    
-現状もう一回プロジェクトを作りなおしている  
-TODO:原因調査
-これで解決するっぽい
-これだと再起動するたび値が元に戻りそう
-```
-sudo sysctl -w fs.inotify.max_user_watchs=12288
-```
-これでできなかったら値を大きくすればいい思うよ
+
 
 # ReactNative勉強用
 ## ReactNativeとは
