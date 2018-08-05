@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 //これらはそれぞれreact-nativeが提供しているコンポーネント
+//ListとAppにコンポーネント情報が分散しているのはおかしい
 import { StyleSheet} from 'react-native';
 import Blink  from './components/Blink.js';
 import Dimension  from './components/Dimension.js';
 import Rayout  from './components/Rayout.js';
 import Nelu from './components/Nelu.js';
 import List from './components/List.js';
+import Random from './components/Random.js';
 import { createStackNavigator } from 'react-navigation';
 
 //名前付きexportはimportする際その名前でしかimportできない
@@ -26,6 +28,9 @@ const RootStack = createStackNavigator({
     },
     List: {
         screen: List
+    },
+    Random: {
+        screen: Random
     }
 }, {
     initialRouteName: 'List'

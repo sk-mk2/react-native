@@ -4,10 +4,11 @@ import { StyleSheet, FlatList, TouchableOpacity, Text, View} from 'react-native'
 export default class List extends Component{
     render() {
         const componentsList = [
-            'Nelu',
-            'Blink',
-            'Dimension',
-            'Rayout'
+            {key: 'Nelu'},
+            {key: 'Blink'},
+            {key: 'Dimension'},
+            {key: 'Rayout'},
+            {key: 'Random'}
         ];
         return (
             <View>
@@ -18,10 +19,11 @@ export default class List extends Component{
                     data={componentsList}
                     renderItem={({ item }) => (
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate(item)}
+                            onPress={() => this.props.navigation.navigate(item.key)}
                         >
                             <Text>
-                                {item}
+                               ・ {item.key}
+
                             </Text>
                         </TouchableOpacity>
                     )}
