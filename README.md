@@ -1,6 +1,9 @@
 # 実行方法
 
 expCLIまたはexpXDEをインストール  
+```
+npm install -g exp
+```
 Expoアカウントでログイン
 
 各種フォルダでnpm install
