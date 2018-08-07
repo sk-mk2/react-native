@@ -7,7 +7,7 @@ const functions = require("firebase-functions");
 exports.random = functions.https.onRequest((request, response) => {
     console.log(request.query);
     const num = request.query.num;
-    response.send(`Random Number is ${getRandomInt(num)}`);
+    response.send({ random: getRandomInt(num) });
 });
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max)) + 1;

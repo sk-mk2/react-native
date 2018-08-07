@@ -8,7 +8,8 @@ export default class List extends Component{
             {key: 'Blink'},
             {key: 'Dimension'},
             {key: 'Rayout'},
-            {key: 'Random'}
+            {key: 'Random'},
+            {key: 'Fukuda'}
         ];
         return (
             <View>

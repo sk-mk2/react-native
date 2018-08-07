@@ -8,6 +8,7 @@ import Rayout  from './components/Rayout.js';
 import Nelu from './components/Nelu.js';
 import List from './components/List.js';
 import Random from './components/Random.js';
+import Fukuda from './components/Fukuda.js';
 import { createStackNavigator } from 'react-navigation';
 
 //名前付きexportはimportする際その名前でしかimportできない
@@ -31,6 +32,9 @@ const RootStack = createStackNavigator({
     },
     Random: {
         screen: Random
+    },
+    Fukuda: {
+        screen: Fukuda
     }
 }, {
     initialRouteName: 'List'

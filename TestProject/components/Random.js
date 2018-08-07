@@ -1,26 +1,32 @@
 import React, {Component} from 'react';
-import { TextInput, Text, View } from 'react-native';
+import { TextInput, Text, View, Button } from 'react-native';
 
 export default class Random extends Component {
     constructor(props) {
         super(props);
-        this.state = { text: ''};
+        this.state = { 
+            text: '',
+            randomNum:''
+        };
     }
     
     //serverのコードをjsonを返すようにする
     getRandom(num) {
         const url = `https://us-central1-react-native-server-6550b.cloudfunctions.net/random?num=${num}`;
         return fetch(url, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
         .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            console.log(json);
             this.setState({
-                dataSource: '乱数' + JSON.stringify(response) 
+                randomNum: '乱数' + json.random
             }, () => {
-
             });
         })
         .catch((error) => {
@@ -35,12 +41,20 @@ export default class Random extends Component {
                     style= {{ height: 40 }}
                     placeholder="乱数の最大値を入力"
                     onChangeText = {(text) => {
-                        this.getRandom(text);
+                        this.setState({
+                            text: text
+                        });
                     }}
                 />
+
+                <Button
+                    onPress= {() => {this.getRandom(this.state.text);}}
+                    title="乱数取得"
+                />
+
                 <Text>
                     この下に乱数が表示される{'\n'}
-                    {this.state.dataSource}
+                    {this.state.randomNum}
                 </Text>
             </View>
         );

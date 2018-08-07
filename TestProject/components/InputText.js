@@ -15,7 +15,9 @@ export default class PizzaTranlator extends Component{
                     onChangeText={(text) => this.setState({text})}
                 />
                 <Text style={{padding: 10, fontSize: 42}}>
-                    {this.state.text === "長濱ねる" ? "かわいい" : "しらない"}
+                    {this.state.text === "長濱ねる" ? "かわいい" : "しらない" || 
+                                         "福田敦" ? "かわいい" : "しらない" 
+                    }
                 </Text>
             </View>
         );

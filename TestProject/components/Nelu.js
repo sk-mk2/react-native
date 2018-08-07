@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import { Text, ScrollView, Image, View} from 'react-native';
 import LotsOfGreetings  from './Greeting.js';
 import Style  from './Style.js';
-import Dimension  from './Dimension.js';
 import InputText  from './InputText.js';
-import { createStackNavigator } from 'react-navigation';
 
 //名前付きexportはimportする際その名前でしかimportできない
 //default export は好きな名前でimportできる
