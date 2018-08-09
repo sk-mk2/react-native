@@ -1,43 +1,92 @@
 import React, { Component } from 'react';
 //これらはそれぞれreact-nativeが提供しているコンポーネント
-//ListとAppにコンポーネント情報が分散しているのはおかしい
-import { StyleSheet} from 'react-native';
-import Blink  from './components/Blink.js';
-import Dimension  from './components/Dimension.js';
-import Rayout  from './components/Rayout.js';
+import { TouchableOpacity , FlatList, View} from 'react-native';
+//native-base
+//UI用フレームワークbootstrap的な
+import {
+    Container,
+    Header,
+    Title,
+    Content,
+    Footer,
+    Button,
+    Left,
+    Right,
+    Body,
+    Icon,
+    List,
+    ListItem,
+    H2,
+    Text
+} from 'native-base';
 import Nelu from './components/Nelu.js';
-import List from './components/List.js';
 import Random from './components/Random.js';
-import Fukuda from './components/Fukuda.js';
 import { createStackNavigator } from 'react-navigation';
+import Style from './components/Style';
 
 //名前付きexportはimportする際その名前でしかimportできない
 //default export は好きな名前でimportできる
+const componentsList = [
+    { key: 'Nelu' ,
+      title: 'ねる画像'},
+    { key: 'Random' ,
+      title: '乱数取得アプリ'},
+];
+class Lists extends Component{
+    render() {
+        return (
+            <Container>
+                <Header>
+                <Body>
+                <H2>
+                    React-Native Tutrial
+                </H2>
+                </Body>
+                </Header>
+
+              <Content>  
+                <List
+                    dataArray ={componentsList}
+                    renderRow={(item) => (
+                        <ListItem>
+                        <Left>
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate(item.key)}
+                                >
+                                    <Text style={Style.textUp}>
+                                        {item.title}
+                                    </Text>
+                                </TouchableOpacity>
+                            </Left>
+                            <Right>
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate(item.key)}
+                                >
+                                    <Icon type='Entypo' name='chevron-right' />
+                                </TouchableOpacity>
+                                </Right>
+                        </ListItem>
+                    )}
+                >
+                </List>
+                </Content>
+            </Container>
+        );
+    }
+}
 
 const RootStack = createStackNavigator({
     Nelu: {
-        screen: Nelu 
+        screen: Nelu,
     },
-    Blink: {
-        screen: Blink 
-    },
-    Dimension: {
-        screen: Dimension 
-    },
-    Rayout: {
-        screen: Rayout 
-    },
-    List: {
-        screen: List
+    Lists: {
+        screen: Lists
     },
     Random: {
         screen: Random
     },
-    Fukuda: {
-        screen: Fukuda
-    }
 }, {
-    initialRouteName: 'List'
+    initialRouteName: 'Lists'
 });
 
 
@@ -48,7 +97,6 @@ const RootStack = createStackNavigator({
 //WebSocketも使える,これもwebAPI使ってアクセスするっぽい
 //react-navigatorというので画面遷移は簡単にできる
 
-
 export default class App extends Component {
     render() {
         return (
@@ -56,13 +104,3 @@ export default class App extends Component {
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
-// skip this line if using Create React Native App
-// AppRegistry.registerComponent('AwesomeProject', () => App);
