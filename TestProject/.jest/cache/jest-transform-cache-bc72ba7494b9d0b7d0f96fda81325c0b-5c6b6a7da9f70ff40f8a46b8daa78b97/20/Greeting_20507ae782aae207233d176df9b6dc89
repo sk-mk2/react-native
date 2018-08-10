@@ -1,0 +1,89 @@
+48cd4c075eea894d52d3cc4e87a62f90
+"use strict";
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importStar(require("react"));
+
+var react_native_1 = require("react-native"); //renderの中のreturnは()!!
+//コンポーネントに引数をもたせるにはこう
+
+
+var Greeting =
+/** @class */
+function (_super) {
+  __extends(Greeting, _super);
+
+  function Greeting() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Greeting.prototype.render = function () {
+    return react_1.default.createElement(react_native_1.Text, null, "Hello ", this.props.name, "!");
+  };
+
+  return Greeting;
+}(react_1.Component);
+
+var LotsOfGreetings =
+/** @class */
+function (_super) {
+  __extends(LotsOfGreetings, _super);
+
+  function LotsOfGreetings() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  LotsOfGreetings.prototype.render = function () {
+    return react_1.default.createElement(react_native_1.View, {
+      style: {
+        alignItems: 'center'
+      }
+    }, react_1.default.createElement(Greeting, {
+      name: 'Rexxar'
+    }), react_1.default.createElement(Greeting, {
+      name: 'Jaina'
+    }), react_1.default.createElement(Greeting, {
+      name: 'Valeera'
+    }));
+  };
+
+  return LotsOfGreetings;
+}(react_1.Component);
+
+exports.default = LotsOfGreetings; //# sourceMappingURL=Greeting.js.map
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdyZWV0aW5nLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQUEsVUFBQSxhQUFBLFFBQUEsT0FBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxpQkFBQSxRQUFBLGNBQUEsQ0FBQSxDLENBRUE7QUFDQTs7O0FBQ0EsSUFBQTtBQUFBO0FBQUEsVUFBQSxNQUFBLEVBQUE7QUFBdUIsWUFBQSxRQUFBLEVBQUEsTUFBQTs7QUFBdkIsV0FBQSxRQUFBLEdBQUE7O0FBUUM7O0FBUEcsV0FBQSxTQUFBLENBQUEsTUFBQSxHQUFBLFlBQUE7QUFDSSxXQUNJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxlQUFBLElBQUQsRUFBSyxJQUFMLEUsUUFBQSxFQUNPLEtBQUssS0FBTCxDQUFXLElBRGxCLEVBRU8sR0FGUCxDQURKO0FBS0gsR0FORDs7QUFPSixTQUFBLFFBQUE7QUFBQyxDQVJELENBQXVCLFFBQUEsU0FBdkIsQ0FBQTs7QUFVQSxJQUFBO0FBQUE7QUFBQSxVQUFBLE1BQUEsRUFBQTtBQUE2QyxZQUFBLGVBQUEsRUFBQSxNQUFBOztBQUE3QyxXQUFBLGVBQUEsR0FBQTs7QUFVQzs7QUFURyxrQkFBQSxTQUFBLENBQUEsTUFBQSxHQUFBLFlBQUE7QUFDSSxXQUNJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxlQUFBLElBQUQsRUFBSztBQUFDLGFBQU87QUFBQyxvQkFBWTtBQUFiO0FBQVIsS0FBTCxFQUNJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxRQUFELEVBQVM7QUFBQyxZQUFLO0FBQU4sS0FBVCxDQURKLEVBRUksUUFBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFFBQUQsRUFBUztBQUFDLFlBQUs7QUFBTixLQUFULENBRkosRUFHSSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsUUFBRCxFQUFTO0FBQUMsWUFBSztBQUFOLEtBQVQsQ0FISixDQURKO0FBT0gsR0FSRDs7QUFTSixTQUFBLGVBQUE7QUFBQyxDQVZELENBQTZDLFFBQUEsU0FBN0MsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQge0FwcFJlZ2lzdHJ5LCBUZXh0LCBWaWV3IH0gZnJvbSAncmVhY3QtbmF0aXZlJztcblxuLy9yZW5kZXLjga7kuK3jga5yZXR1cm7jga8oKSEhXG4vL+OCs+ODs+ODneODvOODjeODs+ODiOOBq+W8leaVsOOCkuOCguOBn+OBm+OCi+OBq+OBr+OBk+OBhlxuY2xhc3MgR3JlZXRpbmcgZXh0ZW5kcyBDb21wb25lbnQge1xuICAgIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxUZXh0PlxuICAgICAgICAgICAgSGVsbG8ge3RoaXMucHJvcHMubmFtZX0hXG4gICAgICAgICAgICA8L1RleHQ+XG4gICAgICAgICAgICApO1xuICAgIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgTG90c09mR3JlZXRpbmdzIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgICByZW5kZXIoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8VmlldyBzdHlsZT17e2FsaWduSXRlbXM6ICdjZW50ZXInfX0+XG4gICAgICAgICAgICAgICAgPEdyZWV0aW5nIG5hbWU9J1JleHhhcicgLz5cbiAgICAgICAgICAgICAgICA8R3JlZXRpbmcgbmFtZT0nSmFpbmEnIC8+XG4gICAgICAgICAgICAgICAgPEdyZWV0aW5nIG5hbWU9J1ZhbGVlcmEnIC8+XG4gICAgICAgICAgICA8L1ZpZXc+XG4gICAgICAgICAgICApO1xuICAgIH1cbn1cblxuIl0sInNvdXJjZVJvb3QiOiIifQ==

@@ -1,0 +1,144 @@
+ffe483c5e3f269d762973be2697e5325
+"use strict";
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importStar(require("react")); //これらはそれぞれreact-nativeが提供しているコンポーネント
+
+
+var react_native_1 = require("react-native"); //native-base
+//UI用フレームワークbootstrap的な
+
+
+var native_base_1 = require("native-base");
+
+var Nelu_1 = __importDefault(require("./components/Nelu"));
+
+var Random_js_1 = __importDefault(require("./components/Random.js"));
+
+var react_navigation_1 = require("react-navigation");
+
+var Style_1 = __importDefault(require("./components/Style")); //名前付きexportはimportする際その名前でしかimportできない
+//default export は好きな名前でimportできる
+
+
+var componentsList = [{
+  key: 'Nelu',
+  title: 'ねる画像'
+}, {
+  key: 'Random',
+  title: '乱数取得アプリ'
+}];
+
+var Lists =
+/** @class */
+function (_super) {
+  __extends(Lists, _super);
+
+  function Lists() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Lists.prototype.render = function () {
+    var _this = this;
+
+    return react_1.default.createElement(native_base_1.Container, null, react_1.default.createElement(native_base_1.Header, null, react_1.default.createElement(native_base_1.Body, null, react_1.default.createElement(native_base_1.H2, null, "React-Native Tutrial"))), react_1.default.createElement(native_base_1.Content, null, react_1.default.createElement(native_base_1.List, {
+      dataArray: componentsList,
+      renderRow: function (item) {
+        return react_1.default.createElement(native_base_1.ListItem, null, react_1.default.createElement(native_base_1.Left, null, react_1.default.createElement(react_native_1.TouchableOpacity, {
+          onPress: function () {
+            return _this.props.navigation.navigate(item.key);
+          }
+        }, react_1.default.createElement(native_base_1.Text, {
+          style: Style_1.default.textUp
+        }, item.title))), react_1.default.createElement(native_base_1.Right, null, react_1.default.createElement(react_native_1.TouchableOpacity, {
+          onPress: function () {
+            return _this.props.navigation.navigate(item.key);
+          }
+        }, react_1.default.createElement(native_base_1.Icon, {
+          type: 'Entypo',
+          name: 'chevron-right'
+        }))));
+      }
+    })));
+  };
+
+  return Lists;
+}(react_1.Component);
+
+var RootStack = react_navigation_1.createStackNavigator({
+  Nelu: {
+    screen: Nelu_1.default
+  },
+  Lists: {
+    screen: Lists
+  },
+  Random: {
+    screen: Random_js_1.default
+  }
+}, {
+  initialRouteName: 'Lists'
+}); //他にも各種ボタン、リスト表示とか用のコンポーネントもある
+//httpRequestはfetchAPIを使うのが一般的？axiosとかでも
+//react-native自体にその機能はないっぽい
+//WebSocketも使える,これもwebAPI使ってアクセスするっぽい
+//react-navigatorというので画面遷移は簡単にできる
+
+var App =
+/** @class */
+function (_super) {
+  __extends(App, _super);
+
+  function App() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  App.prototype.render = function () {
+    return react_1.default.createElement(RootStack, null);
+  };
+
+  return App;
+}(react_1.Component);
+
+exports.default = App; //# sourceMappingURL=App.js.map
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFwcC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFBLFVBQUEsYUFBQSxRQUFBLE9BQUEsQ0FBQSxDQUFBLEMsQ0FDQTs7O0FBQ0EsSUFBQSxpQkFBQSxRQUFBLGNBQUEsQ0FBQSxDLENBQ0E7QUFDQTs7O0FBQ0EsSUFBQSxnQkFBQSxRQUFBLGFBQUEsQ0FBQTs7QUFnQkEsSUFBQSxTQUFBLGdCQUFBLFFBQUEsbUJBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsY0FBQSxnQkFBQSxRQUFBLHdCQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLHFCQUFBLFFBQUEsa0JBQUEsQ0FBQTs7QUFDQSxJQUFBLFVBQUEsZ0JBQUEsUUFBQSxvQkFBQSxDQUFBLENBQUEsQyxDQUVBO0FBQ0E7OztBQUNBLElBQU0saUJBQWlCLENBQ25CO0FBQUUsT0FBSyxNQUFQO0FBQ0UsU0FBTztBQURULENBRG1CLEVBR25CO0FBQUUsT0FBSyxRQUFQO0FBQ0UsU0FBTztBQURULENBSG1CLENBQXZCOztBQU9BLElBQUE7QUFBQTtBQUFBLFVBQUEsTUFBQSxFQUFBO0FBQW9CLFlBQUEsS0FBQSxFQUFBLE1BQUE7O0FBQXBCLFdBQUEsS0FBQSxHQUFBOztBQXlDQzs7QUF4Q0csUUFBQSxTQUFBLENBQUEsTUFBQSxHQUFBLFlBQUE7QUFBQSxRQUFBLFFBQUEsSUFBQTs7QUFDSSxXQUNJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLFNBQUQsRUFBVSxJQUFWLEVBQ0ksUUFBQSxPQUFBLENBQUEsYUFBQSxDQUFDLGNBQUEsTUFBRCxFQUFPLElBQVAsRUFDQSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsY0FBQSxJQUFELEVBQUssSUFBTCxFQUNBLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLEVBQUQsRUFBRyxJQUFILEVBQUcsc0JBQUgsQ0FEQSxDQURBLENBREosRUFTRSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsY0FBQSxPQUFELEVBQVEsSUFBUixFQUNFLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLElBQUQsRUFBSztBQUNELGlCQUFZLGNBRFg7QUFFRCxpQkFBVyxVQUFDLElBQUQsRUFBSztBQUFLLGVBQ2pCLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLFFBQUQsRUFBUyxJQUFULEVBQ0EsUUFBQSxPQUFBLENBQUEsYUFBQSxDQUFDLGNBQUEsSUFBRCxFQUFLLElBQUwsRUFDUSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsZUFBQSxnQkFBRCxFQUFpQjtBQUNiLG1CQUFTLFlBQUE7QUFBTSxtQkFBQSxNQUFLLEtBQUwsQ0FBVyxVQUFYLENBQXNCLFFBQXRCLENBQStCLEtBQS9CLEdBQUEsQ0FBQTtBQUF3QztBQUQxQyxTQUFqQixFQUdJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLElBQUQsRUFBSztBQUFDLGlCQUFPLFFBQUEsT0FBQSxDQUFNO0FBQWQsU0FBTCxFQUNLLEtBQUssS0FEVixDQUhKLENBRFIsQ0FEQSxFQVVJLFFBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxjQUFBLEtBQUQsRUFBTSxJQUFOLEVBQ0ksUUFBQSxPQUFBLENBQUEsYUFBQSxDQUFDLGVBQUEsZ0JBQUQsRUFBaUI7QUFDYixtQkFBUyxZQUFBO0FBQU0sbUJBQUEsTUFBSyxLQUFMLENBQVcsVUFBWCxDQUFzQixRQUF0QixDQUErQixLQUEvQixHQUFBLENBQUE7QUFBd0M7QUFEMUMsU0FBakIsRUFHSSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsY0FBQSxJQUFELEVBQUs7QUFBQyxnQkFBSyxRQUFOO0FBQWUsZ0JBZmY7QUFlQSxTQUFMLENBSEosQ0FESixDQVZKLENBRGlCO0FBbUJwQjtBQXJCQSxLQUFMLENBREYsQ0FURixDQURKO0FBc0NILEdBdkNEOztBQXdDSixTQUFBLEtBQUE7QUFBQyxDQXpDRCxDQUFvQixRQUFBLFNBQXBCLENBQUE7O0FBMkNBLElBQU0sWUFBWSxtQkFBQSxvQkFBQSxDQUFxQjtBQUNuQyxRQUFNO0FBQ0YsWUFBUSxPQUFBO0FBRE4sR0FENkI7QUFJbkMsU0FBTztBQUNILFlBQVE7QUFETCxHQUo0QjtBQU9uQyxVQUFRO0FBQ0osWUFBUSxZQUFBO0FBREo7QUFQMkIsQ0FBckIsRUFVZjtBQUNDLG9CQUFrQjtBQURuQixDQVZlLENBQWxCLEMsQ0FjQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBLElBQUE7QUFBQTtBQUFBLFVBQUEsTUFBQSxFQUFBO0FBQWlDLFlBQUEsR0FBQSxFQUFBLE1BQUE7O0FBQWpDLFdBQUEsR0FBQSxHQUFBOztBQU1DOztBQUxHLE1BQUEsU0FBQSxDQUFBLE1BQUEsR0FBQSxZQUFBO0FBQ0ksV0FDSSxRQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsU0FBRCxFQUFVLElBQVYsQ0FESjtBQUdILEdBSkQ7O0FBS0osU0FBQSxHQUFBO0FBQUMsQ0FORCxDQUFpQyxRQUFBLFNBQWpDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnO1xuLy/jgZPjgozjgonjga/jgZ3jgozjgZ7jgoxyZWFjdC1uYXRpdmXjgYzmj5DkvpvjgZfjgabjgYTjgovjgrPjg7Pjg53jg7zjg43jg7Pjg4hcbmltcG9ydCB7IFRvdWNoYWJsZU9wYWNpdHkgLCBGbGF0TGlzdCwgVmlld30gZnJvbSAncmVhY3QtbmF0aXZlJztcbi8vbmF0aXZlLWJhc2Vcbi8vVUnnlKjjg5Xjg6zjg7zjg6Djg6/jg7zjgq9ib290c3RyYXDnmoTjgapcbmltcG9ydCB7XG4gICAgQ29udGFpbmVyLFxuICAgIEhlYWRlcixcbiAgICBUaXRsZSxcbiAgICBDb250ZW50LFxuICAgIEZvb3RlcixcbiAgICBCdXR0b24sXG4gICAgTGVmdCxcbiAgICBSaWdodCxcbiAgICBCb2R5LFxuICAgIEljb24sXG4gICAgTGlzdCxcbiAgICBMaXN0SXRlbSxcbiAgICBIMixcbiAgICBUZXh0XG59IGZyb20gJ25hdGl2ZS1iYXNlJztcbmltcG9ydCBOZWx1IGZyb20gJy4vY29tcG9uZW50cy9OZWx1JztcbmltcG9ydCBSYW5kb20gZnJvbSAnLi9jb21wb25lbnRzL1JhbmRvbS5qcyc7XG5pbXBvcnQgeyBjcmVhdGVTdGFja05hdmlnYXRvciB9IGZyb20gJ3JlYWN0LW5hdmlnYXRpb24nO1xuaW1wb3J0IFN0eWxlIGZyb20gJy4vY29tcG9uZW50cy9TdHlsZSc7XG5cbi8v5ZCN5YmN5LuY44GNZXhwb3J044GvaW1wb3J044GZ44KL6Zqb44Gd44Gu5ZCN5YmN44Gn44GX44GLaW1wb3J044Gn44GN44Gq44GEXG4vL2RlZmF1bHQgZXhwb3J0IOOBr+WlveOBjeOBquWQjeWJjeOBp2ltcG9ydOOBp+OBjeOCi1xuY29uc3QgY29tcG9uZW50c0xpc3QgPSBbXG4gICAgeyBrZXk6ICdOZWx1JyAsXG4gICAgICB0aXRsZTogJ+OBreOCi+eUu+WDjyd9LFxuICAgIHsga2V5OiAnUmFuZG9tJyAsXG4gICAgICB0aXRsZTogJ+S5seaVsOWPluW+l+OCouODl+ODqid9LFxuXTtcblxuY2xhc3MgTGlzdHMgZXh0ZW5kcyBDb21wb25lbnR7XG4gICAgcmVuZGVyKCkge1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPENvbnRhaW5lcj5cbiAgICAgICAgICAgICAgICA8SGVhZGVyPlxuICAgICAgICAgICAgICAgIDxCb2R5PlxuICAgICAgICAgICAgICAgIDxIMj5cbiAgICAgICAgICAgICAgICAgICAgUmVhY3QtTmF0aXZlIFR1dHJpYWxcbiAgICAgICAgICAgICAgICA8L0gyPlxuICAgICAgICAgICAgICAgIDwvQm9keT5cbiAgICAgICAgICAgICAgICA8L0hlYWRlcj5cblxuICAgICAgICAgICAgICA8Q29udGVudD4gIFxuICAgICAgICAgICAgICAgIDxMaXN0XG4gICAgICAgICAgICAgICAgICAgIGRhdGFBcnJheSA9e2NvbXBvbmVudHNMaXN0fVxuICAgICAgICAgICAgICAgICAgICByZW5kZXJSb3c9eyhpdGVtKSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8TGlzdEl0ZW0+XG4gICAgICAgICAgICAgICAgICAgICAgICA8TGVmdD5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRvdWNoYWJsZU9wYWNpdHlcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uUHJlc3M9eygpID0+IHRoaXMucHJvcHMubmF2aWdhdGlvbi5uYXZpZ2F0ZShpdGVtLmtleSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUZXh0IHN0eWxlPXtTdHlsZS50ZXh0VXB9PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtpdGVtLnRpdGxlfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UZXh0PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1RvdWNoYWJsZU9wYWNpdHk+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9MZWZ0PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxSaWdodD5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRvdWNoYWJsZU9wYWNpdHlcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uUHJlc3M9eygpID0+IHRoaXMucHJvcHMubmF2aWdhdGlvbi5uYXZpZ2F0ZShpdGVtLmtleSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxJY29uIHR5cGU9J0VudHlwbycgbmFtZT0nY2hldnJvbi1yaWdodCcgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9Ub3VjaGFibGVPcGFjaXR5PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1JpZ2h0PlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9MaXN0SXRlbT5cbiAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPC9MaXN0PlxuICAgICAgICAgICAgICAgIDwvQ29udGVudD5cbiAgICAgICAgICAgIDwvQ29udGFpbmVyPlxuICAgICAgICApO1xuICAgIH1cbn1cblxuY29uc3QgUm9vdFN0YWNrID0gY3JlYXRlU3RhY2tOYXZpZ2F0b3Ioe1xuICAgIE5lbHU6IHtcbiAgICAgICAgc2NyZWVuOiBOZWx1LFxuICAgIH0sXG4gICAgTGlzdHM6IHtcbiAgICAgICAgc2NyZWVuOiBMaXN0c1xuICAgIH0sXG4gICAgUmFuZG9tOiB7XG4gICAgICAgIHNjcmVlbjogUmFuZG9tXG4gICAgfSxcbn0sIHtcbiAgICBpbml0aWFsUm91dGVOYW1lOiAnTGlzdHMnXG59KTtcblxuLy/ku5bjgavjgoLlkITnqK7jg5zjgr/jg7PjgIHjg6rjgrnjg4jooajnpLrjgajjgYvnlKjjga7jgrPjg7Pjg53jg7zjg43jg7Pjg4jjgoLjgYLjgotcbi8vaHR0cFJlcXVlc3Tjga9mZXRjaEFQSeOCkuS9v+OBhuOBruOBjOS4gOiIrOeahO+8n2F4aW9z44Go44GL44Gn44KCXG4vL3JlYWN0LW5hdGl2ZeiHquS9k+OBq+OBneOBruapn+iDveOBr+OBquOBhOOBo+OBveOBhFxuLy9XZWJTb2NrZXTjgoLkvb/jgYjjgoss44GT44KM44KCd2ViQVBJ5L2/44Gj44Gm44Ki44Kv44K744K544GZ44KL44Gj44G944GEXG4vL3JlYWN0LW5hdmlnYXRvcuOBqOOBhOOBhuOBruOBp+eUu+mdoumBt+enu+OBr+ewoeWNmOOBq+OBp+OBjeOCi1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBBcHAgZXh0ZW5kcyBDb21wb25lbnQge1xuICAgIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxSb290U3RhY2sgLz5cbiAgICAgICAgKTtcbiAgICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9
