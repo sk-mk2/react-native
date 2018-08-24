@@ -1,0 +1,26 @@
+763bc6e6f3fd6221d0810a905e66dc01
+"use strict"; //jsにstyleを書いて反映させる
+//StyleSheet.createで複数のスタイルを
+//ひとつの場所に定義することが推奨されている
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_native_1 = require("react-native"); //このオブジェクトが通常のcssファイルの代わりになる
+
+
+exports.default = react_native_1.StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30
+  },
+  red: {
+    color: 'red'
+  },
+  textUp: {
+    position: 'relative'
+  }
+}); //# sourceMappingURL=Style.js.map
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlN0eWxlLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiY0FBQTtBQUNBO0FBQ0E7Ozs7OztBQUVBLElBQUEsaUJBQUEsUUFBQSxjQUFBLENBQUEsQyxDQUVBOzs7QUFDQSxRQUFBLE9BQUEsR0FBZSxlQUFBLFVBQUEsQ0FBVyxNQUFYLENBQWtCO0FBQy9CLFdBQVM7QUFDUCxXQUFPLE1BREE7QUFFUCxnQkFBWSxNQUZMO0FBR1AsY0FBVTtBQUhILEdBRHNCO0FBTS9CLE9BQUs7QUFDSCxXQUFPO0FBREosR0FOMEI7QUFTL0IsVUFBUTtBQUNOLGNBQVc7QUFETDtBQVR1QixDQUFsQixDQUFmLEMiLCJzb3VyY2VzQ29udGVudCI6WyIvL2pz44Grc3R5bGXjgpLmm7jjgYTjgablj43mmKDjgZXjgZvjgotcbi8vU3R5bGVTaGVldC5jcmVhdGXjgafopIfmlbDjga7jgrnjgr/jgqTjg6vjgpJcbi8v44Gy44Go44Gk44Gu5aC05omA44Gr5a6a576p44GZ44KL44GT44Go44GM5o6o5aWo44GV44KM44Gm44GE44KLXG5cbmltcG9ydCB7IFN0eWxlU2hlZXQgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuXG4vL+OBk+OBruOCquODluOCuOOCp+OCr+ODiOOBjOmAmuW4uOOBrmNzc+ODleOCoeOCpOODq+OBruS7o+OCj+OCiuOBq+OBquOCi1xuZXhwb3J0IGRlZmF1bHQgU3R5bGVTaGVldC5jcmVhdGUoe1xuICBiaWdibHVlOiB7XG4gICAgY29sb3I6ICdibHVlJyxcbiAgICBmb250V2VpZ2h0OiAnYm9sZCcsXG4gICAgZm9udFNpemU6IDMwLFxuICB9LFxuICByZWQ6IHtcbiAgICBjb2xvcjogJ3JlZCcsXG4gIH0sXG4gIHRleHRVcDoge1xuICAgIHBvc2l0aW9uIDogJ3JlbGF0aXZlJyxcbiAgfVxufSk7XG5cbiJdLCJzb3VyY2VSb290IjoiIn0=
