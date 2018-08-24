@@ -10,12 +10,17 @@ Expoアカウントでログイン
 
 ## expoCLIよく使うコマンド
 それぞれ対応したネットワークでアプリを動かす
+```
 exp start --tunnel,--lan,--localhost  
+```
 エラーENOSPCが出るときは下のコマンド
+```
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
 アプリをexpo上に公開
+```
 exp publish
-
+```
 
 
 # ReactNative勉強用
@@ -46,7 +51,7 @@ iosアプリなどをxcode無しで実機確認できる
 
 # やりたいこと
 - TypeScriptの導入
-- firebaseへのCI/CD
+- firebaseへのCI/CD -> circleCI使ってみる
 - ネイティブアプリならではの機能実験
 
 
